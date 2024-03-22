@@ -14,6 +14,7 @@ class SalomonBottomBar extends StatelessWidget {
     this.unselectedItemColor,
     this.selectedColorOpacity,
     this.itemShape = const StadiumBorder(),
+    this.itemHeight = 20,
     this.margin = const EdgeInsets.all(8),
     this.itemPadding = const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
     this.duration = const Duration(milliseconds: 500),
@@ -43,6 +44,9 @@ class SalomonBottomBar extends StatelessWidget {
 
   /// The border shape of each item.
   final ShapeBorder itemShape;
+
+  /// The height of each item.
+  final double itemHeight;
 
   /// A convenience field for the margin surrounding the entire widget.
   final EdgeInsets margin;
@@ -124,7 +128,7 @@ class SalomonBottomBar extends StatelessWidget {
                                 ///
                                 /// The Align property appears to make these full height, would be
                                 /// best to find a way to make it respond only to padding.
-                                height: 20,
+                                height: itemHeight,
                                 child: Align(
                                   alignment: Alignment(-0.2, 0.0),
                                   widthFactor: t,
